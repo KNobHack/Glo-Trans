@@ -38,18 +38,28 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4"><b>Glo</b>-Trans</h1>
               </div>
-              <form class="user" action="{{ url('/login') }}">
+              @if ($errors->any())
+                <div class="alert alert-danger">
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                </div>
+              @endif
+              <form class="user" action="{{ url('/login') }}" method="POST">
+                @csrf
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                  <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail"
                     aria-describedby="emailHelp" placeholder="Masukkan Email...">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-user" id="exampleInputPassword"
-                    placeholder="Masukkan Password...">
+                  <input type="password" name="password" class="form-control form-control-user"
+                    id="exampleInputPassword" placeholder="Masukkan Password...">
                 </div>
                 <div class="form-group">
                   <div class="custom-control custom-checkbox small">
-                    <input type="checkbox" class="custom-control-input" id="customCheck">
+                    <input type="checkbox" name="remember" class="custom-control-input" id="customCheck">
                     <label class="custom-control-label" for="customCheck">Ingat saya</label>
                   </div>
                 </div>
