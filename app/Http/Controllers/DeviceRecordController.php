@@ -18,10 +18,16 @@ class DeviceRecordController extends Controller
 
     function dataMasuk()
     {
+        $data = DeviceRecord::withTrashed()->get();
+
+        return view('device_record.masuk');
     }
 
     function dataTerverifikasi()
     {
+        $data = DeviceRecord::withTrashed()->get();
+
+        return view('device_record.terverifikasi');
     }
 
     // /**

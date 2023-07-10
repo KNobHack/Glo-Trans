@@ -23,6 +23,10 @@ class DeviceRecordSeeder extends Seeder
                 }
             }
 
+            if ($i % 2 != 0 && rand(1, 2) == 2) {
+                $factory = $factory->verified();
+            }
+
             $factory->create();
         }
     }

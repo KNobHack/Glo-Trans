@@ -45,4 +45,14 @@ class DeviceRecordFactory extends Factory
             ];
         });
     }
+
+    /**
+     * Indicate that the data should be verified.
+     */
+    public function verified(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'verified_at' => now(),
+        ]);
+    }
 }
