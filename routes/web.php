@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DeviceRecordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +20,10 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('dashboard', [DashboardController::class, 'index']);
+
+    Route::prefix('device-record')->group(function () {
+        Route::get('data-masuk', [DeviceRecordController::class, 'dataMasuk']);
+        Route::get('data-terverifikasi', [DeviceRecordController::class, 'dataTerverifikasi']);
+    });
 });
