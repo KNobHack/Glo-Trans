@@ -38,7 +38,8 @@
                 <tr>
                   <td>{{ $loop->iteration }}</td>
                   <td>{{ $data->text }}</td>
-                  <td></td>
+                  <td><audio controls src="/storage/text-to-speech/sample-3s.mp3">
+                    </audio></td>
                   <td>
                     <form action="" class="d-none" id="data_verify_{{ $loop->iteration }}"></form>
                     <form action="" class="d-none" id="data_reject_{{ $loop->iteration }}"></form>
