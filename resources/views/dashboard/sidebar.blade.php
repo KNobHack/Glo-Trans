@@ -31,7 +31,7 @@
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="{{ url('/') }}">Data baru masuk</a>
+        <a class="collapse-item" href="{{ url('/device-record/data-masuk') }}">Data baru masuk</a>
         <a class="collapse-item" href="{{ url('/') }}">Data terverifikasi</a>
       </div>
     </div>
