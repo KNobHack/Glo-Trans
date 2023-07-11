@@ -40,7 +40,7 @@
                   <td>{{ $data->text }}</td>
                   <td>
                     {{-- <audio controls src="/storage/text-to-speech/sample-3s.mp3"></audio> --}}
-                    <audio controls src="/storage/text-to-speech/{{ $data->audio_file }}"></audio>
+                    <audio controls src="{{ url("/storage/text-to-speech/{$data->audio_file}") }}"></audio>
                   </td>
                   <td>
                     <form method="POST" action="{{ url("/device-record/verify/{$data->id}") }}" class="d-none"
