@@ -34,11 +34,25 @@ class DeviceRecordController extends Controller
     {
         $deviceRecord->verify()->save();
 
+        $alerts = collect(session('alerts'));
+        $alerts->add([
+            'mode' => 'success',
+            'message' => "Data dengan kata {$deviceRecord->text} berhasil diverifikasi"
+        ]);
+        session()->flash('alerts', $alerts);
+
         return redirect()->back();
     }
 
     public function reject(DeviceRecord $deviceRecord)
     {
+        $alerts = collect(session('alerts'));
+        $alerts->add([
+            'mode' => 'warning',
+            'message' => "Data dengan kata {$deviceRecord->text} berhasil ditolak"
+        ]);
+        session()->flash('alerts', $alerts);
+
         $deviceRecord->delete();
 
         return redirect()->back();

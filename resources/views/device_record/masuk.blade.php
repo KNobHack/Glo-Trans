@@ -9,6 +9,15 @@
       <h1 class="h3 mb-0 text-gray-800">Data Baru Masuk</h1>
     </div>
 
+    @foreach (session('alerts') ?? [] as $alert)
+      <div class="alert alert-{{ $alert['mode'] }} alert-dismissible fade show" role="alert">
+        {{ $alert['message'] }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    @endforeach
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">

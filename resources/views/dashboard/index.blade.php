@@ -11,6 +11,15 @@
           class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
     </div>
 
+    @foreach (session('alerts') ?? [] as $alert)
+      <div class="alert alert-{{ $alert['mode'] }} alert-dismissible fade show" role="alert">
+        {{ $alert->message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    @endforeach
+
     <!-- Content Row -->
     <div class="row">
 
