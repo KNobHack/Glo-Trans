@@ -25,5 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('device-record')->group(function () {
         Route::get('data-masuk', [DeviceRecordController::class, 'dataMasuk']);
         Route::get('data-terverifikasi', [DeviceRecordController::class, 'dataTerverifikasi']);
+        Route::delete('reject/{deviceRecord}', [DeviceRecordController::class, 'reject']);
+        Route::put('verify/{deviceRecord}', [DeviceRecordController::class, 'verify']);
     });
 });

@@ -41,8 +41,12 @@
                   <td><audio controls src="/storage/text-to-speech/sample-3s.mp3">
                     </audio></td>
                   <td>
-                    <form action="" class="d-none" id="data_reject_{{ $loop->iteration }}"></form>
-                    <button onclick="" class="btn btn-danger"><i class="fas fa-times fa-sm"></i></button>
+                    <form method="POST" action="{{ url("/device-record/reject/{$data->id}") }}" class="d-none"
+                      id="data_reject_{{ $loop->iteration }}">
+                      @method('DELETE')
+                      @csrf</form>
+                    <button onclick="document.querySelector('#data_reject_{{ $loop->iteration }}').submit()"
+                      class="btn btn-danger"><i class="fas fa-times fa-sm"></i></button>
                   </td>
                 </tr>
               @endforeach

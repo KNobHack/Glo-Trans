@@ -9,4 +9,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class DeviceRecord extends Model
 {
     use HasFactory, SoftDeletes;
+
+    function verify(): DeviceRecord
+    {
+        $this->verified_at = now();
+        return $this;
+    }
 }

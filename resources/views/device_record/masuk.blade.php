@@ -41,10 +41,19 @@
                   <td><audio controls src="/storage/text-to-speech/sample-3s.mp3">
                     </audio></td>
                   <td>
-                    <form action="" class="d-none" id="data_verify_{{ $loop->iteration }}"></form>
-                    <form action="" class="d-none" id="data_reject_{{ $loop->iteration }}"></form>
-                    <button onclick="" class="btn btn-success"><i class="fas fa-check fa-sm"></i></button>
-                    <button onclick="" class="btn btn-danger"><i class="fas fa-times fa-sm"></i></button>
+                    <form method="POST" action="{{ url("/device-record/verify/{$data->id}") }}" class="d-none"
+                      id="data_verify_{{ $loop->iteration }}">
+                      @method('PUT')
+                      @csrf
+                    </form>
+                    <form method="POST" action="{{ url("/device-record/reject/{$data->id}") }}" class="d-none"
+                      id="data_reject_{{ $loop->iteration }}">
+                      @method('DELETE')
+                      @csrf</form>
+                    <button onclick="document.querySelector('#data_verify_{{ $loop->iteration }}').submit()"
+                      class="btn btn-success"><i class="fas fa-check fa-sm"></i></button>
+                    <button onclick="document.querySelector('#data_reject_{{ $loop->iteration }}').submit()"
+                      class="btn btn-danger"><i class="fas fa-times fa-sm"></i></button>
                   </td>
                 </tr>
               @endforeach
