@@ -94,15 +94,17 @@
       <!-- Area Chart -->
       <div class="col-xl-8 col-lg-7">
         <div class="card shadow mb-4">
-          <!-- Card Header - Dropdown -->
-          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Grafik Data</h6>
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Sarung tangan Glo-Trans</h6>
           </div>
-          <!-- Card Body -->
           <div class="card-body">
-            <div class="chart-area">
-              <canvas id="myAreaChart"></canvas>
-            </div>
+            <p>Sarung tangan ini dirancang dengan sensor flex dan gyroscope yang mampu menangkap gerakan tangan pengguna,
+              dan data sensor tersebut akan diproses menggunakan algoritma Random Forest untuk mengenali gerakan tangan
+              yang sesuai dengan bahasa isyarat SIBI. Gerakan tangan yang dikenali kemudian akan diterjemahkan menjadi
+              teks atau suara yang dapat dimengerti oleh orang lain.</p>
+            <p class="mb-0">Melalui pengembangan sarung tangan penerjemah bahasa
+              isyarat SIBI ini, diharapkan penderita tuna rungu wicara dapat mengatasi hambatan komunikasi mereka dan
+              lebih terlibat dalam kehidupan sehari-hari serta interaksi sosial.</p>
           </div>
         </div>
       </div>
