@@ -38,7 +38,7 @@
                 <tr>
                   <td>{{ $loop->iteration }}</td>
                   <td>{{ $data->text }}</td>
-                  <td><audio controls src="/storage/text-to-speech/sample-3s.mp3">
+                  <td><audio controls src="/storage/text-to-speech/{{ $data->audio_file }}">
                     </audio></td>
                   <td>
                     <form method="POST" action="{{ url("/device-record/reject/{$data->id}") }}" class="d-none"

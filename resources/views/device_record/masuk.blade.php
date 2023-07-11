@@ -38,8 +38,10 @@
                 <tr>
                   <td>{{ $loop->iteration }}</td>
                   <td>{{ $data->text }}</td>
-                  <td><audio controls src="/storage/text-to-speech/sample-3s.mp3">
-                    </audio></td>
+                  <td>
+                    {{-- <audio controls src="/storage/text-to-speech/sample-3s.mp3"></audio> --}}
+                    <audio controls src="/storage/text-to-speech/{{ $data->audio_file }}"></audio>
+                  </td>
                   <td>
                     <form method="POST" action="{{ url("/device-record/verify/{$data->id}") }}" class="d-none"
                       id="data_verify_{{ $loop->iteration }}">
