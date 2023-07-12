@@ -36,5 +36,7 @@ Route::middleware(['auth'])->group(function () {
                 'verified_at' => null,
                 'deleted_at' => null,
             ]);
+
+        return redirect('/dashboard');
     });
 });
