@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeviceRecordController;
+use App\Models\DeviceRecord;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('data-terverifikasi', [DeviceRecordController::class, 'dataTerverifikasi']);
         Route::delete('reject/{deviceRecord}', [DeviceRecordController::class, 'reject']);
         Route::put('verify/{deviceRecord}', [DeviceRecordController::class, 'verify']);
+    });
+
+    Route::get('/reset-weh-tin', function () {
+        DeviceRecord::whereIn('id', [836, 839, 840, 841, 842])
+            ->update([
+                'verified_at' => null,
+                'deleted_at' => null,
+            ]);
     });
 });
